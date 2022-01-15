@@ -11,3 +11,149 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.header-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: text-align;
+  text-decoration: none;
+  color: black;
+  padding-left: 15px;
+}
+
+.title-header{
+  margin:0;
+  padding-left: 5px;
+  padding-top: 3px;
+}
+.header-page {
+  background-color: rgb(136, 167, 255);
+}
+.header-link-button {
+  text-decoration: none;
+  color: black;
+  padding: 15px;
+  size: 12;
+}
+
+.box-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
+  border: solid 3px rgb(136, 167, 255);
+  border-radius: 15%;
+  margin: 8%;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-forms {
+  margin: 10px;
+  border-radius: 15px;
+  padding: 10px;
+  border: solid rgb(136, 167, 255);
+}
+
+.box-cadastro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 3px rgb(136, 167, 255);
+  padding: 2%;
+  border-radius: 5%;
+  margin: 8%;
+}
+
+.form-cadastro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box-produtos-home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5%;
+}
+
+.card-image{
+  display: flex;
+  height: 300px
+}
+
+.box-produtos-link {
+  max-height: 400px;
+  min-height: 400px;
+  text-decoration: none;
+  color: black;
+}
+
+.product-card{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.price{
+  color: red;
+  font-size: 15px;
+}
+
+.box-produto-solo{
+  padding: 8%;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.imagem-produto{
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.box-dados-produto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3%;
+}
+
+.box-comprar {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-header {
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  margin-right: 15px;
+  font-size: 26px;
+}
+
+.box-user-content{
+  margin: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.perfil-image {
+  padding: 20px;
+  border-radius: 50%;
+  max-height: 350px;
+  max-width: 350px;
+}

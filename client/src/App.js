@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import useAuth from "./hooks/useAuth";
+import axios from "axios";
+import Header from "./components/shared/header";
+import Footer from "./components/shared/footer";
+import Cadastro from "./pages/cadastro";
+import Login from "./pages/login";
+import Home from "./pages/home";
+import Produto from "./pages/produto";
+import Cart from "./pages/cart";
+import Perfil from "./pages/perfil";
+
+
+axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.headers.post["Content-Type"] = "application/json";
 
 function App() {
+  
+  const { token } = useAuth();
+  
+
+  const IsAuthenticated = (Component) => {
+    if (token) {
+      return Component;
+    } else {
+      return <Login />;
+    }
+  };
+
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <> 
+      <Header/>
+      <Routes>
+        <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/produto/:id" element={IsAuthenticated(<Produto />)} />
+        <Route path="/carrinho" element={IsAuthenticated(<Cart />)} />
+        <Route path="/perfil" element={IsAuthenticated(<Perfil />)} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
