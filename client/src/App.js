@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Routes, Route } from "react-router-dom";
 import useAuth from "./hooks/useAuth";
 import axios from "axios";
@@ -18,7 +18,20 @@ axios.defaults.headers.post["Content-Type"] = "application/json";
 function App() {
   
   const { token } = useAuth();
-  
+
+  const [update, setUpdate] = useState();
+
+  console.log("renderizando");
+
+  useEffect(() => {
+    if (token) {
+      setUpdate(false)
+    } else { 
+      setUpdate(true)
+    }
+    console.log("rodou useeffect");
+    
+  },[token, update])
 
   const IsAuthenticated = (Component) => {
     if (token) {
